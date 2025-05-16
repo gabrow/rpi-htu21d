@@ -23,6 +23,21 @@
 
 #include "http_server.h"
 
+/**
+ * @brief HTTP request handler for the server.
+ *
+ * Handles different endpoints ("/data", "/history", others) and generates appropriate HTTP responses.
+ *
+ * @param cls Unused user-defined pointer.
+ * @param connection The MHD connection object.
+ * @param url The requested URL.
+ * @param method The HTTP method (e.g., "GET").
+ * @param version The HTTP version.
+ * @param upload_data Data uploaded by the client (unused).
+ * @param upload_data_size Size of the uploaded data (unused).
+ * @param con_cls Connection-specific pointer (unused).
+ * @return MHD result code.
+ */
 int handler(void *cls, struct MHD_Connection *connection,
             const char *url, const char *method,
             const char *version, const char *upload_data,
